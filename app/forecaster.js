@@ -59,5 +59,5 @@ function getLyrics(lyrics){
       title = response.hits[0].result.full_title;
        resolve( {title});
     });
-  }
+  });
 }

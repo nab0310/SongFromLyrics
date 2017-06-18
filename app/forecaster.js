@@ -12,18 +12,17 @@ module.exports = function(req, res) {
             req.body.request.intent.slots.Lyrics.value) {
 
             getLyrics(req.body.request.intent.slots.Lyrics.value)
-              .then(function(song)){
+              .then(function(song) {
                 console.log('responding to Lyric request for ' + req.body.request.intent.slots.Lyrics.value + ' with ', song);
                 res.json(
                     buildResponse( {}, '<speak>' + song + '</speak>')
                 );
+              })
                 .catch(function(err) {
                     res.json(
                         buildResponse( {}, '<speak>' + err + '</speak>', {}, true )
                     );
-              }
-
-            }
+              });
         }
 
     } else {

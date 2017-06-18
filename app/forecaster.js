@@ -34,6 +34,7 @@ module.exports = function(req, res) {
 
 
 function buildResponse(session, speech, card, end) {
+  console.log("Response returned was: ",speech);
     return {
         version: VERSION,
         sessionAttributes: session,

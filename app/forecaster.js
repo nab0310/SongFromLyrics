@@ -51,9 +51,11 @@ function getLyrics(lyrics){
   var api = require('genius-api');
   var genius = new api("dXif373aX9mzBQRvThIKy5Jm25hcvzaGjz9FA7_TVuZp3Ke5DKuCCJC1eK17urdv");
 
-  //search
-  genius.search(lyrics).then(function(response) {
-    console.log('hits', response.hits[0].result.full_title);
-    return response.hits[0].result.full_title;
-  });
+  return new Promise(function(resolve, reject) {
+    //search
+    genius.search(lyrics).then(function(response) {
+      console.log('hits', response.hits[0].result.full_title);
+       resolve( {response.hits[0].result.full_title});
+    });
+  }
 }

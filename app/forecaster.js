@@ -54,8 +54,10 @@ function getLyrics(lyrics){
   return new Promise(function(resolve, reject) {
     //search
     genius.search(lyrics).then(function(response) {
+      let title;
       console.log('hits', response.hits[0].result.full_title);
-       resolve( {response.hits[0].result.full_title});
+      title = response.hits[0].result.full_title;
+       resolve( {title});
     });
   }
 }

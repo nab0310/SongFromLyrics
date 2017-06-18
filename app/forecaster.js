@@ -16,7 +16,7 @@ module.exports = function(req, res) {
               .then(function(song) {
                 console.log('responding to Lyric request for ' + req.body.request.intent.slots.Lyrics.value + ' with ', song);
                 res.json(
-                    buildResponse( {}, '<speak>' + song + '</speak>')
+                    buildResponse( {}, '<speak>' + song.title + '</speak>')
                 );
               })
                 .catch(function(err) {
@@ -35,7 +35,7 @@ module.exports = function(req, res) {
 
 
 function buildResponse(session, speech, card, end) {
-  console.log("Response returned was: ",speech.title);
+  console.log("Response returned was: ",speech);
     return {
         version: VERSION,
         sessionAttributes: session,

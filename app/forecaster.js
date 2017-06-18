@@ -42,7 +42,7 @@ function buildResponse(session, speech, card, end) {
         response: {
             outputSpeech: {
                 type: 'SSML',
-                ssml: speech
+                ssml: speech.title
             }
         }
     };

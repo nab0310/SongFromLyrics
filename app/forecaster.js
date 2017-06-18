@@ -35,14 +35,14 @@ module.exports = function(req, res) {
 
 
 function buildResponse(session, speech, card, end) {
-  console.log("Response returned was: ",speech);
+  console.log("Response returned was: ",speech.title);
     return {
         version: VERSION,
         sessionAttributes: session,
         response: {
             outputSpeech: {
                 type: 'SSML',
-                ssml: speech.title
+                ssml: speech
             }
         }
     };

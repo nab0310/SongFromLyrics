@@ -1,5 +1,6 @@
 'use strict';
 
+const VERSION = '1.0';
 
 module.exports = function(req, res) {
 
